@@ -7,7 +7,7 @@ import { HomeScreen } from "./home-screen"
  */
 test("render correctly", () => {
   const { getByTestId } = render(<HomeScreen />)
-  // expect(getByTestId("screen")).toBeTruthy()
+  expect(getByTestId("screen")).toBeTruthy()
   expect(getByTestId("header")).toBeTruthy()
   expect(getByTestId("list")).toBeTruthy()
   expect(getByTestId("item")).toBeTruthy()

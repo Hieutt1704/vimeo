@@ -7,7 +7,11 @@ import {
   View,
   Dimensions,
 } from "react-native"
-import { useSafeAreaInsets } from "react-native-safe-area-context"
+import {
+  initialWindowMetrics,
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context"
 import { ScreenProps } from "./screen.props"
 import { isNonScrolling, offsets, presets } from "./screen.presets"
 
@@ -104,9 +108,13 @@ function ScreenWithScrolling(props: ScreenProps) {
  * @param props The screen props
  */
 export function Screen(props: ScreenProps) {
-  if (isNonScrolling(props.preset)) {
-    return <ScreenWithoutScrolling {...props} />
-  } else {
-    return <ScreenWithScrolling {...props} />
-  }
+  return (
+    <SafeAreaProvider initialMetrics={initialWindowMetrics} testID={props.testID}>
+      {isNonScrolling(props.preset) ? (
+        <ScreenWithoutScrolling {...props} />
+      ) : (
+        <ScreenWithScrolling {...props} />
+      )}
+    </SafeAreaProvider>
+  )
 }

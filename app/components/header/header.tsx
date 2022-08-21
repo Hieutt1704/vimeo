@@ -34,11 +34,12 @@ export function Header(props: HeaderProps) {
     headerTx,
     style,
     titleStyle,
+    testID,
   } = props
   const header = headerText || (headerTx && translate(headerTx)) || ""
 
   return (
-    <View style={[ROOT, style]}>
+    <View style={[ROOT, style]} testID={testID}>
       {leftIcon ? (
         <Button preset="link" onPress={onLeftPress}>
           <Icon icon={leftIcon} />

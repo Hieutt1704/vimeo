@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from "react"
+import React, { FC } from "react"
 import { observer } from "mobx-react-lite"
 import { FlatList, ImageStyle, TextStyle, View, ViewStyle, Dimensions } from "react-native"
 import { StackScreenProps } from "@react-navigation/stack"
@@ -6,7 +6,7 @@ import { NavigatorParamList } from "../../navigators"
 import { AutoImage, Header, Screen, Text } from "../../components"
 import { color, spacing } from "../../theme"
 // import { useNavigation } from "@react-navigation/native"
-import { useStores } from "../../models"
+import { useGetCategories } from "./useGetCategories"
 
 const BACKGROUND_IMAGE =
   "https://i.vimeocdn.com/video/1486234694-2789256b3e16a01f78abaebcc3eeb1ef872b63bc8bfda834c8c4cc6b11fb578b-d"
@@ -72,29 +72,21 @@ const CATEGORY_SEPARATOR: ViewStyle = {
 
 export const HomeScreen: FC<StackScreenProps<NavigatorParamList, "home">> = observer(
   function HomeScreen() {
-    const { categoryStore } = useStores()
-    const { categories } = categoryStore
-
-    useEffect(() => {
-      async function fetchData() {
-        await categoryStore.getCategories()
-      }
-
-      fetchData()
-    }, [])
+    const { categories } = useGetCategories()
 
     // const navigation = useNavigation()
 
     return (
       <Screen style={ROOT} preset="fixed">
-        <Header headerTx="home.title" style={HEADER} titleStyle={HEADER_TITLE} />
+        <Header testID="header" headerTx="home.title" style={HEADER} titleStyle={HEADER_TITLE} />
         <FlatList
+          testID="list"
           data={categories}
           numColumns={2}
           keyExtractor={(item) => item.key}
           contentContainerStyle={FLAT_LIST}
           renderItem={({ item }) => (
-            <View style={CATEGORY_CONTAINER}>
+            <View testID="item" style={CATEGORY_CONTAINER}>
               <AutoImage source={{ uri: BACKGROUND_IMAGE }} style={CATEGORY_BACKGROUND} />
               <View style={CATEGORY_INFO}>
                 <AutoImage source={{ uri: item.image }} style={CATEGORY_ICON} />

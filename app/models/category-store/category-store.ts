@@ -1,4 +1,5 @@
 import { Instance, SnapshotIn, SnapshotOut, types } from "mobx-state-tree"
+import { CategoryApi } from "../../services/api/category-api"
 import { CategoryModel, CategorySnapshotOut } from "../category/category"
 import { withEnvironment } from "../extensions/with-environment"
 
@@ -11,6 +12,18 @@ export const CategoryStoreModel = types
   .actions((self) => ({
     saveCategories: (categorySnapshots: CategorySnapshotOut[]) => {
       self.categories.replace(categorySnapshots)
+    },
+  }))
+  .actions((self) => ({
+    getCategories: async () => {
+      const categoryApi = new CategoryApi(self.environment.api)
+      const result = await categoryApi.getCategories()
+
+      if (result.kind === "ok") {
+        self.saveCategories(result.categories)
+      } else {
+        __DEV__ && console.tron.log(result.kind)
+      }
     },
   }))
 

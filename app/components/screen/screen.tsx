@@ -7,7 +7,11 @@ import {
   View,
   Dimensions,
 } from "react-native"
-import { useSafeAreaInsets } from "react-native-safe-area-context"
+import {
+  initialWindowMetrics,
+  SafeAreaProvider,
+  useSafeAreaInsets,
+} from "react-native-safe-area-context"
 import { ScreenProps } from "./screen.props"
 import { isNonScrolling, offsets, presets } from "./screen.presets"
 
@@ -26,7 +30,7 @@ function ScreenWithoutScrolling(props: ScreenProps) {
       behavior={isIos ? "padding" : undefined}
       keyboardVerticalOffset={offsets[props.keyboardOffset || "none"]}
     >
-      <StatusBar barStyle={props.statusBar || "light-content"} />
+      <StatusBar barStyle={props.statusBar || "dark-content"} />
       <View style={[preset.inner, style, insetStyle]}>{props.children}</View>
     </KeyboardAvoidingView>
   )
@@ -82,7 +86,7 @@ function ScreenWithScrolling(props: ScreenProps) {
       behavior={isIos ? "padding" : undefined}
       keyboardVerticalOffset={offsets[props.keyboardOffset || "none"]}
     >
-      <StatusBar barStyle={props.statusBar || "light-content"} />
+      <StatusBar barStyle={props.statusBar || "dark-content"} />
       <View style={[preset.outer, backgroundStyle, insetStyle]}>
         <ScrollView
           style={[preset.outer, backgroundStyle]}
@@ -104,9 +108,13 @@ function ScreenWithScrolling(props: ScreenProps) {
  * @param props The screen props
  */
 export function Screen(props: ScreenProps) {
-  if (isNonScrolling(props.preset)) {
-    return <ScreenWithoutScrolling {...props} />
-  } else {
-    return <ScreenWithScrolling {...props} />
-  }
+  return (
+    <SafeAreaProvider initialMetrics={initialWindowMetrics} testID={props.testID}>
+      {isNonScrolling(props.preset) ? (
+        <ScreenWithoutScrolling {...props} />
+      ) : (
+        <ScreenWithScrolling {...props} />
+      )}
+    </SafeAreaProvider>
+  )
 }

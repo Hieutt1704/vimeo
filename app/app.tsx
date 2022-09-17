@@ -25,16 +25,8 @@ import { ErrorBoundary } from "./screens/error/error-boundary"
 
 export const NAVIGATION_PERSISTENCE_KEY = "NAVIGATION_STATE"
 
-/**
- * This is the root component of our app.
- */
-function App() {
+export const useRootStore = () => {
   const [rootStore, setRootStore] = useState<RootStore | undefined>(undefined)
-  const {
-    initialNavigationState,
-    onNavigationStateChange,
-    isRestored: isNavigationStateRestored,
-  } = useNavigationPersistence(storage, NAVIGATION_PERSISTENCE_KEY)
 
   // Kick off initial async loading actions, like loading fonts and RootStore
   useEffect(() => {
@@ -43,6 +35,23 @@ function App() {
       setupRootStore().then(setRootStore)
     })()
   }, [])
+
+  return {
+    rootStore,
+    setRootStore,
+  }
+}
+
+/**
+ * This is the root component of our app.
+ */
+function App() {
+  const { rootStore } = useRootStore()
+  const {
+    initialNavigationState,
+    onNavigationStateChange,
+    isRestored: isNavigationStateRestored,
+  } = useNavigationPersistence(storage, NAVIGATION_PERSISTENCE_KEY)
 
   // Before we show the app, we have to wait for our state to be ready.
   // In the meantime, don't render anything. This will be the background

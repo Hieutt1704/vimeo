@@ -1,15 +1,166 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`renders correctly 1`] = `
-<RNCSafeAreaProvider
-  onInsetsChange={[Function]}
+exports[`renders auto 1`] = `
+<View
+  onLayout={[Function]}
   style={
     Array [
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "flex": 1,
+          "height": "100%",
+        },
+        Object {},
+      ],
       Object {
-        "flex": 1,
+        "paddingBottom": 0,
       },
-      undefined,
     ]
   }
-/>
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "flex": 1,
+          "height": "100%",
+        },
+        Object {},
+        Object {
+          "paddingTop": 0,
+        },
+      ]
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        Array [
+          Object {
+            "alignItems": "stretch",
+            "justifyContent": "flex-start",
+          },
+          Object {},
+        ]
+      }
+      keyboardShouldPersistTaps="handled"
+      onContentSizeChange={[Function]}
+      scrollEnabled={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#ffffff",
+            "flex": 1,
+            "height": "100%",
+          },
+          Object {},
+        ]
+      }
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+</View>
+`;
+
+exports[`renders fixed 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Array [
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "flex": 1,
+          "height": "100%",
+        },
+        Object {},
+      ],
+      Object {
+        "paddingBottom": 0,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "alignItems": "stretch",
+          "height": "100%",
+          "justifyContent": "flex-start",
+          "width": "100%",
+        },
+        Object {},
+        Object {
+          "paddingTop": 0,
+        },
+      ]
+    }
+  />
+</View>
+`;
+
+exports[`renders scroll 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Array [
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "flex": 1,
+          "height": "100%",
+        },
+        Object {},
+      ],
+      Object {
+        "paddingBottom": 0,
+      },
+    ]
+  }
+>
+  <View
+    style={
+      Array [
+        Object {
+          "backgroundColor": "#ffffff",
+          "flex": 1,
+          "height": "100%",
+        },
+        Object {},
+        Object {
+          "paddingTop": 0,
+        },
+      ]
+    }
+  >
+    <RCTScrollView
+      contentContainerStyle={
+        Array [
+          Object {
+            "alignItems": "stretch",
+            "justifyContent": "flex-start",
+          },
+          Object {},
+        ]
+      }
+      keyboardShouldPersistTaps="handled"
+      scrollEnabled={true}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#ffffff",
+            "flex": 1,
+            "height": "100%",
+          },
+          Object {},
+        ]
+      }
+    >
+      <View />
+    </RCTScrollView>
+  </View>
+</View>
 `;

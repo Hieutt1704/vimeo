@@ -16,7 +16,7 @@ export const CategoryItem = ({ category, testID }: CategoryItemProps) => {
   return (
     <View testID={testID} style={homeScreenStyles.categoryContainer}>
       <AutoImage source={{ uri: BACKGROUND_IMAGE }} style={homeScreenStyles.categoryBackground} />
-      <View style={homeScreenStyles.categoryIcon}>
+      <View style={homeScreenStyles.categoryInfo}>
         <AutoImage source={{ uri: category.image }} style={homeScreenStyles.categoryIcon} />
         <Text style={homeScreenStyles.categoryName}>{category.name}</Text>
       </View>

@@ -12,14 +12,14 @@ exports[`category-list have data 1`] = `
     Array [
       Object {
         "id": "favourite",
-        "image": "",
+        "image": "https://i.vimeocdn.com/grab?s=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fcategories%2Firis_icon_sports_64.png%3F11f6d29ab6a020eb65c580a92c1a836c25cf81c4%3Fv%3D2&r=pad&w=20&h=20&f=png",
         "key": "abcdef",
         "lastUpdate": "022-08-20T18:51:49+00:00",
         "name": "favourite",
       },
       Object {
         "id": "favourite",
-        "image": "",
+        "image": "https://i.vimeocdn.com/grab?s=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fcategories%2Firis_icon_sports_64.png%3F11f6d29ab6a020eb65c580a92c1a836c25cf81c4%3Fv%3D2&r=pad&w=20&h=20&f=png",
         "key": "abcdefasdasd",
         "lastUpdate": "022-08-20T18:51:49+00:00",
         "name": "favourite",
@@ -82,9 +82,12 @@ exports[`category-list have data 1`] = `
           <View
             style={
               Object {
-                "height": 24,
-                "tintColor": "#ffffff",
-                "width": 24,
+                "alignItems": "center",
+                "backgroundColor": "#00000090",
+                "height": 363,
+                "justifyContent": "center",
+                "position": "absolute",
+                "width": 363,
               }
             }
           >
@@ -94,7 +97,7 @@ exports[`category-list have data 1`] = `
               source={
                 Array [
                   Object {
-                    "uri": "",
+                    "uri": "https://i.vimeocdn.com/grab?s=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fcategories%2Firis_icon_sports_64.png%3F11f6d29ab6a020eb65c580a92c1a836c25cf81c4%3Fv%3D2&r=pad&w=20&h=20&f=png",
                   },
                 ]
               }
@@ -157,9 +160,12 @@ exports[`category-list have data 1`] = `
           <View
             style={
               Object {
-                "height": 24,
-                "tintColor": "#ffffff",
-                "width": 24,
+                "alignItems": "center",
+                "backgroundColor": "#00000090",
+                "height": 363,
+                "justifyContent": "center",
+                "position": "absolute",
+                "width": 363,
               }
             }
           >
@@ -169,7 +175,7 @@ exports[`category-list have data 1`] = `
               source={
                 Array [
                   Object {
-                    "uri": "",
+                    "uri": "https://i.vimeocdn.com/grab?s=https%3A%2F%2Ff.vimeocdn.com%2Fimages_v6%2Fcategories%2Firis_icon_sports_64.png%3F11f6d29ab6a020eb65c580a92c1a836c25cf81c4%3Fv%3D2&r=pad&w=20&h=20&f=png",
                   },
                 ]
               }

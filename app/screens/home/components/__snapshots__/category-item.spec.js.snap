@@ -1,0 +1,79 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`match snapshot 1`] = `
+<View
+  style={
+    Object {
+      "marginLeft": 8,
+    }
+  }
+>
+  <RCTImageView
+    internal_analyticTag={null}
+    resizeMode="cover"
+    source={
+      Array [
+        Object {
+          "uri": "https://i.vimeocdn.com/video/1486234694-2789256b3e16a01f78abaebcc3eeb1ef872b63bc8bfda834c8c4cc6b11fb578b-d",
+        },
+      ]
+    }
+    style={
+      Object {
+        "height": 363,
+        "overflow": "hidden",
+        "width": 363,
+      }
+    }
+  />
+  <View
+    style={
+      Object {
+        "height": 24,
+        "tintColor": "#ffffff",
+        "width": 24,
+      }
+    }
+  >
+    <RCTImageView
+      internal_analyticTag={null}
+      resizeMode="cover"
+      source={
+        Array [
+          Object {
+            "uri": "",
+          },
+        ]
+      }
+      style={
+        Object {
+          "height": 24,
+          "overflow": "hidden",
+          "tintColor": "#ffffff",
+          "width": 24,
+        }
+      }
+      tintColor="#ffffff"
+    />
+    <Text
+      style={
+        Array [
+          Object {
+            "color": "#ffffff",
+            "fontFamily": "Helvetica",
+            "fontSize": 15,
+          },
+          Object {
+            "color": "#ffffff",
+            "fontSize": 14,
+            "fontWeight": "bold",
+            "marginTop": 8,
+          },
+        ]
+      }
+    >
+      favourite
+    </Text>
+  </View>
+</View>
+`;

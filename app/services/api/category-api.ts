@@ -14,7 +14,7 @@ const transformCategory = (category: any) => {
     id: uri?.replace?.("/categories/", "") || "",
     name: name || "",
     lastUpdate: last_video_featured_time || "",
-    image: link || "",
+    image: link || "http://",
   }
   return categoryTransformed
 }
